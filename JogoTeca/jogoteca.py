@@ -1,10 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# Criando a rota principal
 @app.route('/')
 def inicio():
-    return '<h1>Olá mundo!</h1>'
+    return render_template('lista.html')
 
 if __name__ == '__main__':
     app.run()
