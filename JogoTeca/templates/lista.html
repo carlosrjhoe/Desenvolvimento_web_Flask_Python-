@@ -17,9 +17,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>God of War</td>
-                    </tr>
+                    {% for jogo in jogos %}
+                        <tr>
+                            <td>{{ jogo }}</td>
+                        </tr>
+                    {%endfor%}
                 </tbody>
             </table>
         </div>
