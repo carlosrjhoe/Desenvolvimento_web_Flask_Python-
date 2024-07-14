@@ -18,5 +18,10 @@ def inicio():
     lista_de_jogos = (jogo_01, jogo_02, jogo_03, jogo_04)
     return render_template('lista.html', titulo='Jogos', jogos=lista_de_jogos)
 
+# Criando uma nova rota
+@app.route('/cadastrar')
+def cadastrar():
+    return render_template('cadastrar.html', titulo='Cadastrar novo jogo')
+
 if __name__ == '__main__':
     app.run()
