@@ -16,7 +16,6 @@ def inicio():
     jogo_03 = Jogo('Crash', 'Ação', 'Playstation')
     jogo_04 = Jogo('Final Fantasy VII', 'RPG', 'Playstation')
     lista_de_jogos = (jogo_01, jogo_02, jogo_03, jogo_04)
-    # lista_de_jogos = ['Tetris', 'Skyrum', 'Crash', 'Final Fantasy VII', 'Final Fantasy VIII', 'Xenogers']
     return render_template('lista.html', titulo='Jogos', jogos=lista_de_jogos)
 
 if __name__ == '__main__':
