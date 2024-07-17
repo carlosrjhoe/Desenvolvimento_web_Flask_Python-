@@ -26,3 +26,9 @@
 - Como utilizar o bootstrap para estilizar nossa página.
 - Como reutilizar trechos do template.
 - Como gerar URLs dinâmicas.
+
+# 5 Aula:
+
+- Como criar a tela de login.
+- Como guardar os dados da sessão.
+- Como deslogar a sessão.
