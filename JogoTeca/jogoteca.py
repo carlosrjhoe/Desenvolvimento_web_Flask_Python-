@@ -13,8 +13,23 @@ class Jogo:
         self.categoria = categoria
         self.console = console
 
+class Usuario:
+    def __init__(self, nome, nickname, senha):
+        self.nome = nome
+        self.nickname = nickname
+        self.senha = senha
+
 
 # Variáveis Global
+
+usuario_01 = Usuario('Carlos', 'carlosrjhoe', '12345')
+usuario_02 = Usuario('Mayara', 'mayOiao', '12345')
+usuario_03 = Usuario('Neto', 'carlosrneto', '12345')
+usuarios = {
+    usuario_01.nickname: usuario_01,
+    usuario_02.nickname: usuario_02,
+    usuario_03.nickname: usuario_03
+}
 
 jogo_01 = Jogo('Tetris', 'Puzzle', 'Atari')
 jogo_02 = Jogo('Skyrum', 'RPG', 'PC')
@@ -63,11 +78,14 @@ def logout():
 
 @app.route('/autenticar', methods=['POST',])
 def autenticar():
-    if 'senha' == request.form['senha']:
-        session['usuario_logado'] = request.form['usuario']
-        flash(f"Usuário {session['usuario_logado']} logado com sucesso!")
-        proxima_pagina = request.form['proxima']
-        return redirect(proxima_pagina)
+    if request.form['usuario'] in usuarios:
+        usuario = usuarios[request.form['usuario']]
+        if request.form['senha'] == usuario.senha:
+            session['usuario_logado'] = usuario.nickname
+            session['usuario_logado'] = request.form['usuario']
+            flash(f"Usuário {usuario.nickname} logado com sucesso!")
+            proxima_pagina = request.form['proxima']
+            return redirect(proxima_pagina)
     else:
         flash('Usuário não logado!')
         return redirect(url_for('index'))
