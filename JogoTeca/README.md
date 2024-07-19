@@ -32,3 +32,9 @@
 - Como criar a tela de login.
 - Como guardar os dados da sessão.
 - Como deslogar a sessão.
+
+# 6 Aula:
+
+- Como fazer a proteção de rotas.
+- Como tornar melhor nosso fluxo de login.
+- Como controlar múltiplos usuários.
